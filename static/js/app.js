@@ -8,38 +8,37 @@ d3.json("data/samples.json").then((incomingData) => {
 });
 
 
+
 function metaData(sample) {
     // code for metadata goes here
+    
     var selectedMetaData = data.metadata.filter(obj => obj.id == sample)[0];
-    console.log(selectedMetaData);
-    var id = selectedMetaData.id;
-    console.log(id);
-    var ethnicity = selectedMetaData.ethnicity;
-    console.log(ethnicity);
-    var gender = selectedMetaData.gender;
-    console.log(gender);
-    var age = selectedMetaData.age;
-    console.log(age);
-    var location = selectedMetaData.location;
-    console.log(location);
-    var bbtype = selectedMetaData.bbtype;
-    console.log(bbtype);
-    var wfreq = selectedMetaData.wfreq;
-    console.log(wfreq);
-    var metaList = [id, ethnicity, gender, age, location, bbtype, wfreq];
+    // console.log(selectedMetaData);
+    // var id = selectedMetaData.id;
+    // console.log(id);
+    // var ethnicity = selectedMetaData.ethnicity;
+    // console.log(ethnicity);
+    // var gender = selectedMetaData.gender;
+    // console.log(gender);
+    // var age = selectedMetaData.age;
+    // console.log(age);
+    // var location = selectedMetaData.location;
+    // console.log(location);
+    // var bbtype = selectedMetaData.bbtype;
+    // console.log(bbtype);
+    // var wfreq = selectedMetaData.wfreq;
+    // console.log(wfreq);
+    // var metaList = [id, ethnicity, gender, age, location, bbtype, wfreq];
     d3.select('#sample-metadata')
         .selectAll('div')
-        // .data(Object.entries(selectedMetaData))
-        .data(metaList)
+        .data(Object.entries(selectedMetaData))
+        // .data(metaList)
         .enter()
         .append('div')
         .text(function (d) {
-            // return d;
-            return `id: ${d}`
-        
-            
+            return d;
         })
-    // console.log(selectedMetaData);
+    console.log(selectedMetaData);
 }
 
 function buildPlots(sample) {
@@ -52,6 +51,11 @@ function buildPlots(sample) {
     // console.log(sample_values);
     var otu_labels = selectedSample.otu_labels.slice(0, 10);
     // console.log(otu_labels);
+
+ 
+     
+      
+
 }
 function init() {
     // code to populate dropdown menu goes here
