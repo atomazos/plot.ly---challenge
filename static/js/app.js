@@ -112,25 +112,26 @@ var bubbleTrace = {
   Plotly.newPlot('bubble', bubbleData, layout);
 
 //Build Gauge
-var selectedMetaData = data.metadata.filter(obj => obj.id == sample)[0];
+var gaugeMetaData = data.metadata.filter(obj => obj.id == sample)[0];
+console.log(gaugeMetaData.wfreq)
 var trace = {
     type: "pie",
     showlegend: false,
     hole: 0.4,
-    rotation: 90,
-    values: selectedMetaData.wfreq,
+    rotation: 180,
+    values: gaugeMetaData.wfreq,
     text: ["0-1", "1-2", "2-3", "3-4", "4-5", "5-6", "6-7", "7-8","8-9"],
     direction: "clockwise",
     textinfo: "text",
     textposition: "inside",
     marker: {
-      colors: ["rgba(255, 0, 0, 0.6)", "rgba(255, 165, 0, 0.6)", "rgba(255, 255, 0, 0.6)", "rgba(144, 238, 144, 0.6)", "rgba(154, 205, 50, 0.6)", "white"]
+      colors: ["rgb(243,249,250)","rgb(219, 233, 235)", "rgb(176, 204, 209)", "rgb(135, 176, 184)", "rgb(109, 151, 167)", "rgb(73, 123, 133)", "rgb(51,101,110)","rgb(37,88,97)", "rgb(22,70,78)"]
     },
     labels: ["0-1", "1-2", "2-3", "3-4", "4-5", "5-6", "6-7", "7-8","8-9"],
     hoverinfo: "label"
   };
   
-  var degrees = 115, radius = .6;
+  var degrees = 115, radius = .5;
   var radians = degrees * Math.PI / 180;
   var x = -1 * radius * Math.cos(radians);
   var y = radius * Math.sin(radians);
@@ -141,10 +142,10 @@ var trace = {
         x0: 0,
         y0: 0,
         x1: x,
-        y1: 0.5,
+        y1: 0.3,
         line: {
-          color: 'black',
-          width: 8
+          color: "black",
+          width: 4
         }
       }],
     title: 'Belly Button Washing Frequency: Scrubs per week',
@@ -154,7 +155,7 @@ var trace = {
   
   var gaugeData = [trace];
   
-  Plotly.plot("gauge", gaugeData, layout, {staticPlot: true});
+  Plotly.plot("gauge", gaugeData, layout);
 
 }
 
