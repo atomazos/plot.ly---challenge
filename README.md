@@ -11,3 +11,5 @@ Hulcr, J. et al.(2012) A Jungle in There: Bacteria in Belly Buttons are Highly D
 
 
 Please access this website here: 
+![Screen Shot Main](https://user-images.githubusercontent.com/54033512/70576157-cfce2400-1b6d-11ea-8928-6954d7a0bd40.png)
+![Screen Shot Sec](https://user-images.githubusercontent.com/54033512/70576173-d78dc880-1b6d-11ea-8733-a96282e2ad32.png)
